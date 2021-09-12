@@ -2,9 +2,13 @@ from django.shortcuts import render
 import requests
 import datetime
 
-#kharrakaluram@gmail.com
-#api_key="d6406f8e4b2c43d2b855218e5ce7ed12"
-api_key="3b23c600a77e44068710d0ffaaa08af1"#kharrakalu
+# NEWS API
+api_key="your api " #you can take it from https://newsapi.org 
+
+# WEATHER API
+whe_api="your api " #you can take it from https://api.openweathermap.org
+
+
 
 # Create your views here.
 def home(request):
@@ -76,7 +80,7 @@ def sing_news(request,slug,slug2):
 
 def weather(request):
     if request.method=="GET":
-        whe_api="619002b74dfc1519a446c90801b09b47"
+        
         base_url="https://api.openweathermap.org/data/2.5/weather?q="
         city=request.GET['city']
         complete_url=base_url+city+"&appid="+whe_api
